@@ -1,0 +1,78 @@
+@import '../../../../styles/color.scss';
+
+.footer {
+    background-color: $dark-color;
+    color: #fff;
+    padding: 50px;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+}
+
+.footer-widget {
+    h6 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    ul {
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+
+            a {
+                color: $white-color;
+                text-decoration: none;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.footer-contact {
+    h6 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+    }
+}
+
+.footer-social {
+    h6 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-social-icon {
+    a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background: $white-color;
+        color: $dark-color;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;
+        margin-right: 10px;
+    }
+}

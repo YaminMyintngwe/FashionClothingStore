@@ -1,0 +1,47 @@
+@import '../../../../styles/color.scss';
+
+.blog-wrapper {
+    padding: 50px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.blog-card {
+    border: 1px solid $gray-color;
+    border-radius: 8px;
+    padding: 10px;
+
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.blog-item-text {
+    .date {
+        margin-bottom: 5px;
+        i {
+            color: $primary-color;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .blog-title {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .blog-description {
+        font-size: 12px;
+    }
+}

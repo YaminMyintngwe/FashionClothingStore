@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/color.scss';
+@import './styles/common-ant.scss';
+
+@font-face {
+	font-family: "Poppins";
+	src: url("./assets/fonts/Poppins-Regular.woff") format("woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins";
+	font-size: 12px;
+	color: $dark-color;
+    background-color: $white-color;
+	min-height: 100vh;
+}
+
+.logo {
+	width: 150px;
+	height: 60px;
+}

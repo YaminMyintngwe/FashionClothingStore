@@ -1,0 +1,86 @@
+@import '../../../../styles/color.scss';
+
+.shop-wrapper {
+    padding: 50px;
+}
+.category-list {
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+        padding: 0 0 7px;
+        display: inline-block;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background: $primary-color;
+            content: "";
+        }
+    }
+    ul {
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+
+            label {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.product-item {
+    position: relative; 
+
+    img {
+        border-radius: 20px;
+        width: 100%;
+    }
+}
+
+.product-details {
+    position: absolute;
+    left: 65%;
+    bottom: 30px;
+    text-align: center;
+
+    li {
+        list-style: none;
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+        a {
+            display: block;
+            height: 45px;
+            width: 45px;
+            background: #ffffff;
+            border-radius: 50%;
+            line-height: 48px;
+            text-align: center;
+
+            i {
+                font-size: 20px;
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.product-item-text {
+    .product-name {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .product-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+}

@@ -1,0 +1,33 @@
+@import '../../../../styles/color.scss';
+
+.login-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login-form {
+    width: 530px;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid $gray-color;
+    box-shadow: 0 4px 3px rgba(47, 206, 152, 25%);
+}
+
+.logo {
+    width: 150px;
+    height: 60px;
+}
+
+.login-title, .account-link{
+    color: $dark-color;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.account-link-detail {
+    color: $primary-color;
+    font-weight: bold;
+}

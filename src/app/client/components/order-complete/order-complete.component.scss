@@ -1,0 +1,23 @@
+@import '../../../../styles/color.scss';
+
+.order-complete-wrapper {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .order-complete-text {
+        text-align: center;
+
+        i {
+            font-size: 100px;
+            color: $primary-color;
+        }
+
+        .back-btn {
+            background-color: $red-color;
+        }
+    }
+}
+
+

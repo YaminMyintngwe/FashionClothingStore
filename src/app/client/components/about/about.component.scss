@@ -1,0 +1,21 @@
+@import '../../../../styles/color.scss';
+
+.about-wrapper {
+    padding: 50px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    .about-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .about-description {
+        font-size: 12px;
+    }
+}

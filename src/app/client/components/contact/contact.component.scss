@@ -1,0 +1,33 @@
+@import '../../../../styles/color.scss';
+
+.contact-wrapper {
+    padding: 50px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.contact-address {
+    display: flex;
+
+    .contact-icon {
+        margin-right: 20px;
+        
+        i {
+            font-size: 25px;
+        }
+    }
+    .contact-text {
+        h6 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}
