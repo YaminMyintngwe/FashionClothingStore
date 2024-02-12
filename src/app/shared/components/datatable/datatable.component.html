@@ -1,0 +1,37 @@
+<nz-table #borderedTable [nzData]="dataSet" [nzItemRender]="renderItemTemplate" [nzShowTotal]="rangeTemplate">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of borderedTable.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.category }}</td>
+        <td>{{ data.price }}</td>
+        <td>{{ data.image }}</td>
+        <td class="d-flex">
+            <a href="" class="edit"><i class="bi bi-pencil-square"></i></a>
+            <a href="" class="delete"><i class="bi bi-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <ng-template #renderItemTemplate let-type let-page="page">
+    <ng-container [ngSwitch]="type">
+      <a *ngSwitchCase="'page'">{{ page }}</a>
+      <a *ngSwitchCase="'prev'">Previous</a>
+      <a *ngSwitchCase="'next'">Next</a>
+      <a *ngSwitchCase="'prev_5'"><<</a>
+      <a *ngSwitchCase="'next_5'">>></a>
+    </ng-container>
+ </ng-template>
+
+ <ng-template #rangeTemplate let-range="range" let-total>
+    Showing {{ range[0] }} to {{ range[1] }} of {{ total }} entries
+  </ng-template>

@@ -22,7 +22,7 @@ const APP_ROUTES: Routes = [
   {
     path: 'admin', component: AdminLayoutComponent,
     children: [
-
+      {path: '', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
     ]
   }
 ];

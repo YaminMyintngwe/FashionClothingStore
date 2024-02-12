@@ -1,0 +1,39 @@
+@import '../../../../styles/color.scss';
+
+::ng-deep{
+    .ant-table table {
+        border: 1px solid $primary-light-color;
+    }
+
+    .ant-table-thead>tr>th {
+        font-size: 12px;
+        font-weight: bold;
+        background-color: $primary-light-color;
+    }
+
+    .ant-table-tbody>tr>td {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+}
+
+
+.edit, .delete {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 20px;
+        color: $white-color;
+    }
+}
+
+.delete {
+    background-color: $red-color;
+    margin-left: 10px;
+}

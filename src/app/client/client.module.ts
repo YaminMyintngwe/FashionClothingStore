@@ -7,7 +7,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderCompleteComponent } from './components/order-complete/order-complete.component';
-import { APP_IMPORTS } from '../app.import';
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
 import { SharedModule } from '../shared/shared.module';
@@ -26,8 +25,7 @@ import { SharedModule } from '../shared/shared.module';
     ],
     imports: [
         SharedModule,
-        ClientRoutingModule,
-        APP_IMPORTS
+        ClientRoutingModule
     ]
 })
 export class ClientModule { }
