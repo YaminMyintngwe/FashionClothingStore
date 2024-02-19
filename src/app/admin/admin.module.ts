@@ -11,6 +11,8 @@ import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.compo
 import { ManageProductComponent } from './components/manage-product/manage-product.component';
 import { ManageBlogComponent } from './components/manage-blog/manage-blog.component';
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
+import { RoleComponent } from './components/role/role.component';
+import { ManageRoleComponent } from './components/manage-role/manage-role.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import { ManageUserComponent } from './components/manage-user/manage-user.compon
         GeneralSettingComponent,
         ManageProductComponent,
         ManageBlogComponent,
-        ManageUserComponent
+        ManageUserComponent,
+        RoleComponent,
+        ManageRoleComponent
     ],
     imports: [
         SharedModule,

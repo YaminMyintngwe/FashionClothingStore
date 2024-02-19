@@ -8,6 +8,8 @@ import { GeneralSettingComponent } from "./components/general-setting/general-se
 import { ManageProductComponent } from "./components/manage-product/manage-product.component";
 import { ManageBlogComponent } from "./components/manage-blog/manage-blog.component";
 import { ManageUserComponent } from "./components/manage-user/manage-user.component";
+import { RoleComponent } from "./components/role/role.component";
+import { ManageRoleComponent } from "./components/manage-role/manage-role.component";
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
     {path: 'general-setting', component: GeneralSettingComponent},
     {path: 'manage-product', component: ManageProductComponent},
     {path: 'manage-blog', component: ManageBlogComponent},
-    {path: 'manage-user', component: ManageUserComponent}
+    {path: 'manage-user', component: ManageUserComponent},
+    {path: 'role', component: RoleComponent},
+    {path: 'manage-role', component: ManageRoleComponent}
 ]
 
 @NgModule({

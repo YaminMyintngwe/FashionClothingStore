@@ -1,11 +1,14 @@
 <nz-table #borderedTable [nzData]="dataSet" [nzItemRender]="renderItemTemplate" [nzShowTotal]="rangeTemplate">
     <thead>
       <tr>
-        <th>Name</th>
+        <!-- <th>Name</th>
         <th>Category</th>
         <th>Price</th>
         <th>Image</th>
-        <th>Action</th>
+        <th>Action</th> -->
+        <th *ngFor="let column of tableColumns">
+          {{ column.title }}
+        </th>
       </tr>
     </thead>
     <tbody>

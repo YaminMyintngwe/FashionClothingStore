@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Images } from 'src/app/shared/models/imageUrl';
 
 @Component({
@@ -9,4 +10,10 @@ import { Images } from 'src/app/shared/models/imageUrl';
 export class AdminLayoutComponent {
   Images = Images;
   isCollapsed = false;
+
+  constructor(private router : Router) {}
+
+  isSelected(route: string): boolean {
+    return route === this.router.url;
+}
 }

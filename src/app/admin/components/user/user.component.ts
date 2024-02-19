@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TableColumn } from 'src/app/shared/models/table-column';
+import { USER_TABLE_COLUMNS } from '../../constants/user-table.column';
 
 @Component({
   selector: 'app-user',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
-
+  userTableColumns : TableColumn[] = USER_TABLE_COLUMNS;
 }

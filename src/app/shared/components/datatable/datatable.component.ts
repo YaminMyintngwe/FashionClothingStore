@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TableColumn } from '../../models/table-column';
 
 @Component({
   selector: 'app-datatable',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./datatable.component.scss']
 })
 export class DatatableComponent {
+  @Input() tableColumns : TableColumn[] = [];
   dataSet = [
     {
       name: "Yellow T-Shirt",
