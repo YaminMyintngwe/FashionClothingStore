@@ -2,7 +2,7 @@
     <form nz-form nzLayout="vertical" [formGroup]="productForm">
         <nz-form-item>
             <nz-form-label nzFor="name">Name</nz-form-label>
-            <nz-form-control nzErrorTip="This Field is required">
+            <nz-form-control nzErrorTip="Name is required">
                 <input type="text" nz-input formControlName="name"> 
             </nz-form-control>
         </nz-form-item>
@@ -11,7 +11,7 @@
             <div class="col-sm-6">
                 <nz-form-item>
                     <nz-form-label nzFor="category">Category</nz-form-label>
-                    <nz-form-control nzErrorTip="This Field is required">
+                    <nz-form-control nzErrorTip="Category is required">
                         <nz-select formControlName="category">
                             <nz-option nzValue="men's collection" nzLabel="Men's Collection"></nz-option>
                             <nz-option nzValue="women's collection" nzLabel="Women's Collection"></nz-option>
@@ -23,7 +23,7 @@
             <div class="col-sm-6">
                 <nz-form-item>
                     <nz-form-label nzFor="price">Price</nz-form-label>
-                    <nz-form-control nzErrorTip="This Field is required">
+                    <nz-form-control nzErrorTip="Price is required">
                         <input type="text" nz-input formControlName="price"> 
                     </nz-form-control>
                 </nz-form-item>
