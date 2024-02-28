@@ -17,8 +17,7 @@ export const USER_TABLE_COLUMNS: TableColumn[] = [
     {
         title: 'Role',
         priority: false,
-        data: 'role',
-        //sortFn: (a: User, b: User) => a.role.localeCompare(b.role),
+        data: 'role'
     },
     {
         title: 'Action',

@@ -2,28 +2,27 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ProductComponent } from "./components/product/product.component";
-import { BlogComponent } from "./components/blog/blog.component";
-import { UserComponent } from "./components/user/user.component";
-import { GeneralSettingComponent } from "./components/general-setting/general-setting.component";
 import { ManageProductComponent } from "./components/manage-product/manage-product.component";
+import { BlogComponent } from "./components/blog/blog.component";
 import { ManageBlogComponent } from "./components/manage-blog/manage-blog.component";
+import { UserComponent } from "./components/user/user.component";
 import { ManageUserComponent } from "./components/manage-user/manage-user.component";
 import { RoleComponent } from "./components/role/role.component";
 import { ManageRoleComponent } from "./components/manage-role/manage-role.component";
-
+import { GeneralSettingComponent } from "./components/general-setting/general-setting.component";
 
 const routes: Routes = [
     {path: '', component: DashboardComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'product', component: ProductComponent},
+    {path: 'product/:id', component: ManageProductComponent},
     {path: 'blog', component: BlogComponent},
+    {path: 'blog/:id', component: ManageBlogComponent},
     {path: 'user', component: UserComponent},
-    {path: 'general-setting', component: GeneralSettingComponent},
-    {path: 'manage-product', component: ManageProductComponent},
-    {path: 'manage-blog', component: ManageBlogComponent},
-    {path: 'manage-user', component: ManageUserComponent},
+    {path: 'user/:id', component: ManageUserComponent},
     {path: 'role', component: RoleComponent},
-    {path: 'manage-role', component: ManageRoleComponent}
+    {path: 'role/:id', component: ManageRoleComponent},
+    {path: 'general-setting', component: GeneralSettingComponent},
 ]
 
 @NgModule({

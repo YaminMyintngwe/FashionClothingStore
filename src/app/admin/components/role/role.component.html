@@ -1,4 +1,4 @@
 <nz-card nzTitle="Blog List">
-    <button nz-button nzType="default" class="mb-3">Add Role <i class="bi bi-plus-lg"></i></button>
+    <button nz-button nzType="default" class="mb-3" (click)="addRole(0)">Add Role <i class="bi bi-plus-lg"></i></button>
     <app-datatable [tableColumns]="roleTableColumns"></app-datatable>
 </nz-card>

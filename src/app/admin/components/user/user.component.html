@@ -1,4 +1,4 @@
 <nz-card nzTitle="User List">
-    <button nz-button nzType="default" class="mb-3">Add User <i class="bi bi-plus-lg"></i></button>
+    <button nz-button nzType="default" class="mb-3" (click)="addUser(0)">Add User <i class="bi bi-plus-lg"></i></button>
     <app-datatable [tableColumns]="userTableColumns"></app-datatable>
 </nz-card>
