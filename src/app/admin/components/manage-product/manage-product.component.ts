@@ -1,8 +1,10 @@
 import { HttpEvent, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NzUploadFile, NzUploadXHRArgs } from 'ng-zorro-antd/upload';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-manage-product',
@@ -11,19 +13,69 @@ import { NzUploadFile, NzUploadXHRArgs } from 'ng-zorro-antd/upload';
 })
 export class ManageProductComponent implements OnInit {
   productForm!: FormGroup;
-  constructor(private fb:FormBuilder, private router : Router) {}
+  id!: string;
+
+  constructor(private fb: FormBuilder, private router: Router, private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.productForm = this.fb.group({
-      'name': ['', Validators.required],
-      'category': ['', Validators.required],
-      'price': ['', Validators.required],
-    });
+    this.route.params.subscribe((params: Params) => {
+      this.id = params['id'];
+      console.log(this.id);
+      let name = '';
+      let category = '';
+      let price = 0;
+
+      if (this.id !== '') {
+        this.productService.getProductById(this.id).then((products) => {
+          console.log(products.data());
+          let product: Product = (<Product>products.data());
+          name = product.name;
+          category = product.category;
+          price = product.price;
+          // products.forEach(
+          //   (product) => {
+          //     if(product.id === this.id) {
+          //       console.log(product)
+          //       name = product.name;
+          //       category = product.category;
+          //       price = product.price;
+
+          this.productForm = this.fb.group({
+            'name': [name, Validators.required],
+            'category': [category, Validators.required],
+            'price': [price, Validators.required],
+          });
+          //     }
+
+          //   }
+          // )
+        })
+      }
+
+      this.productForm = this.fb.group({
+        'name': [name, Validators.required],
+        'category': [category, Validators.required],
+        'price': [price, Validators.required],
+      });
+    })
+
   }
 
   createOrUpdateForm(): void {
-    if(this.productForm.valid) {
-      console.log("Product form", this.productForm.value);
+    if (this.productForm.valid) {
+      if (this.id === '') {
+        this.productService.addProduct(this.productForm.value).then(() => {
+          console.log('save successfully');
+        }).catch((err) => {
+          console.log(err);
+        })
+      } else {
+        this.productService.updateProduct(this.id, this.productForm.value).then(() => {
+          console.log('update successfully');
+          this.router.navigateByUrl('/admin/product');
+        })
+      }
+
     } else {
       Object.values(this.productForm.controls).forEach(control => {
         if (control.invalid) {

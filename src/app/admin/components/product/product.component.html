@@ -1,4 +1,4 @@
 <nz-card nzTitle="Product List">
-    <button nz-button nzType="default" class="mb-3" (click)="addProduct(0)">Add Product <i class="bi bi-plus-lg"></i></button>
-    <app-datatable [tableColumns]="productTableColumns"></app-datatable>
+    <button nz-button nzType="default" class="mb-3" (click)="addProduct('')">Add Product <i class="bi bi-plus-lg"></i></button>
+    <app-datatable [tableColumns]="productTableColumns" [tableRows]="products"></app-datatable>
 </nz-card>

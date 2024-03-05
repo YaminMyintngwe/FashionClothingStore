@@ -8,6 +8,8 @@ import { IndividualLayoutComponent } from './layouts/individual-layout/individua
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BrowserModule,
         AppRoutingModule,
         SharedModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        provideFirebaseApp(() => initializeApp({"projectId":"fashion-clothing-store-ea57d","appId":"1:161783106998:web:17a4a55b3ea83234674517","storageBucket":"fashion-clothing-store-ea57d.appspot.com","apiKey":"AIzaSyBjXhdTe6a4TIyZMXfMXk3KgGC8TD37hq0","authDomain":"fashion-clothing-store-ea57d.firebaseapp.com","messagingSenderId":"161783106998"})),
+        provideFirestore(() => getFirestore())
     ]
 })
 export class AppModule { }

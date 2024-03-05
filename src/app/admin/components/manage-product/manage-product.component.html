@@ -24,7 +24,7 @@
                 <nz-form-item>
                     <nz-form-label nzFor="price">Price</nz-form-label>
                     <nz-form-control nzErrorTip="Price is required">
-                        <input type="text" nz-input formControlName="price"> 
+                        <input type="number" nz-input formControlName="price"> 
                     </nz-form-control>
                 </nz-form-item>
             </div>
@@ -44,7 +44,7 @@
 
         <div class="d-flex gap-2 justify-content-end">
             <button nz-button nzType="default" class="cancel-button" (click)="cancel()">Cancel</button>
-            <button nz-button nzType="default" (click)="createOrUpdateForm()">Save</button>
+            <button nz-button nzType="default" (click)="createOrUpdateForm()">{{id == '' ? 'Save' : 'Update'}}</button>
         </div>
     </form>
 </nz-card>

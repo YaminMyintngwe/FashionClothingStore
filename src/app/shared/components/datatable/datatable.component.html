@@ -1,11 +1,6 @@
-<nz-table #borderedTable [nzData]="dataSet" [nzItemRender]="renderItemTemplate" [nzShowTotal]="rangeTemplate">
+<nz-table #borderedTable [nzData]="tableRows" [nzItemRender]="renderItemTemplate" [nzShowTotal]="rangeTemplate">
     <thead>
       <tr>
-        <!-- <th>Name</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th>Action</th> -->
         <th *ngFor="let column of tableColumns">
           {{ column.title }}
         </th>
@@ -13,13 +8,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of borderedTable.data">
-        <td>{{ data.name }}</td>
-        <td>{{ data.category }}</td>
-        <td>{{ data.price }}</td>
-        <td>{{ data.image }}</td>
+        <td *ngFor="let item of data | keyvalue : keepOrder">
+          <ng-container *ngIf="item.key !== 'id'">{{ item.value }}</ng-container>
+        </td>
         <td class="d-flex">
-            <a href="" class="edit"><i class="bi bi-pencil-square"></i></a>
-            <a href="" class="delete"><i class="bi bi-trash"></i></a>
+          <a href="" class="edit"><i class="bi bi-pencil-square"></i></a>
+          <a href="" class="delete"><i class="bi bi-trash"></i></a>
         </td>
       </tr>
     </tbody>

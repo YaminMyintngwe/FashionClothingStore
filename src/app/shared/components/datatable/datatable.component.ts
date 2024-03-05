@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TableColumn } from '../../models/table-column';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-datatable',
@@ -8,78 +9,10 @@ import { TableColumn } from '../../models/table-column';
 })
 export class DatatableComponent {
   @Input() tableColumns : TableColumn[] = [];
-  dataSet = [
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-    {
-      name: "Yellow T-Shirt",
-      category: "Women's Collection",
-      price: '$180',
-      image: 'Womens Collection',
-    },
-  ];
+  @Input() tableRows : any;
+
+
+  keepOrder = (a: KeyValue<string,string>, b: KeyValue<string,string>): any => {
+    return a;
+  }
 }

@@ -19,7 +19,7 @@ export const PRODUCT_TABLE_COLUMNS: TableColumn[] = [
         title: 'Price',
         priority: true,
         data: 'price',
-        sortFn: (a: Product, b: Product) => a.price.localeCompare(b.name),
+        //sortFn: (a: Product, b: Product) => a.price.localeCompare(b.name),
 
     },
     {
