@@ -7,13 +7,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of borderedTable.data">
-        <td *ngFor="let item of data | keyvalue : keepOrder">
-          <ng-container *ngIf="item.key !== 'id'">{{ item.value }}</ng-container>
-        </td>
-        <td class="d-flex">
-          <a href="" class="edit"><i class="bi bi-pencil-square"></i></a>
-          <a href="" class="delete"><i class="bi bi-trash"></i></a>
+      <tr *ngFor="let data of borderedTable.data; index as i">
+          <td *ngFor="let item of data | keyvalue : keepOrder">
+            <ng-container *ngIf="item.key === 'id'">
+              {{i + 1}}
+            </ng-container>
+            <ng-container *ngIf="item.key === 'imagePath'">
+              <img [src]="item.value" alt="Image" class="img-responsive" style="max-height: 80px;">
+            </ng-container>
+            <ng-container *ngIf="item.key !== 'id' && item.key !== 'imagePath'">
+              {{item.value}}
+            </ng-container>
+          </td>
+        <td>
+          <div class="d-flex">
+            <a class="edit" [routerLink]="['./'+data.id]"><i class="bi bi-pencil-square"></i></a>
+            <a class="delete" (click)="onDelete(data)"><i class="bi bi-trash"></i></a>
+          </div>
         </td>
       </tr>
     </tbody>

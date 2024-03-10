@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TableColumn } from '../../models/table-column';
 import { KeyValue } from '@angular/common';
 
@@ -7,12 +7,17 @@ import { KeyValue } from '@angular/common';
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.scss']
 })
-export class DatatableComponent {
+export class DatatableComponent  {
   @Input() tableColumns : TableColumn[] = [];
   @Input() tableRows : any;
-
+  @Output() deleteEvent = new EventEmitter<any>();
 
   keepOrder = (a: KeyValue<string,string>, b: KeyValue<string,string>): any => {
     return a;
+  }
+
+  onDelete(data : any) {
+    console.log(data);
+    this.deleteEvent.emit(data);
   }
 }

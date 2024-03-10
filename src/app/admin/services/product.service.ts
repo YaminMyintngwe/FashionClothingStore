@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Firestore, addDoc, collection, collectionData, doc, getDoc, updateDoc } from "@angular/fire/firestore";
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, updateDoc } from "@angular/fire/firestore";
 import { Product } from "../models/product";
 
 @Injectable({
@@ -32,5 +32,10 @@ export class ProductService {
             price: newProduct.price
         }
         return updateDoc(docInstance, updateData);        
+    }
+
+    deleteProduct(id : string) {
+        const docInstance = doc(this.fireStore, 'products', id);
+        return deleteDoc(docInstance);
     }
 }

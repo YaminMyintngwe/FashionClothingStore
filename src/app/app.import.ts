@@ -14,6 +14,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 export const APP_IMPORTS = [
     CommonModule,
@@ -33,5 +34,6 @@ export const APP_IMPORTS = [
     NzTableModule,
     NzPaginationModule,
     NzSelectModule,
-    NzUploadModule
+    NzUploadModule,
+    NzModalModule
 ]

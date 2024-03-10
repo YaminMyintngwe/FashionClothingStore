@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TableColumn } from 'src/app/shared/models/table-column';
 import { PRODUCT_TABLE_COLUMNS } from '../../constants/product-table.column';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 
@@ -13,8 +13,9 @@ import { Product } from '../../models/product';
 export class ProductComponent implements OnInit{
     productTableColumns : TableColumn[] = PRODUCT_TABLE_COLUMNS;
     products! : Product[];
+    id!: string;
 
-    constructor(private router: Router, private productService : ProductService) {}
+    constructor(private router: Router, private productService : ProductService, private route : ActivatedRoute) {}
 
     ngOnInit(): void {
       this.productService.getProduct().subscribe((productList) => {
@@ -25,5 +26,11 @@ export class ProductComponent implements OnInit{
 
     addProduct(id: string) {
       this.router.navigateByUrl(`/admin/product/${id}`);
+    }
+
+    onDelete(product : Product) {
+      this.productService.deleteProduct(product.id).then(() => {
+        console.log('delete successful');
+      })
     }
 }

@@ -24,6 +24,7 @@ export class ManageProductComponent implements OnInit {
       let name = '';
       let category = '';
       let price = 0;
+      let imagePath = '';
 
       if (this.id !== '') {
         this.productService.getProductById(this.id).then((products) => {
@@ -32,6 +33,8 @@ export class ManageProductComponent implements OnInit {
           name = product.name;
           category = product.category;
           price = product.price;
+          imagePath = product.imagePath;
+          console.log(imagePath);
           // products.forEach(
           //   (product) => {
           //     if(product.id === this.id) {
@@ -44,6 +47,7 @@ export class ManageProductComponent implements OnInit {
             'name': [name, Validators.required],
             'category': [category, Validators.required],
             'price': [price, Validators.required],
+            'imagePath': [imagePath, Validators.required]
           });
           //     }
 
@@ -56,6 +60,7 @@ export class ManageProductComponent implements OnInit {
         'name': [name, Validators.required],
         'category': [category, Validators.required],
         'price': [price, Validators.required],
+        'imagePath': [imagePath, Validators.required]
       });
     })
 
@@ -66,6 +71,7 @@ export class ManageProductComponent implements OnInit {
       if (this.id === '') {
         this.productService.addProduct(this.productForm.value).then(() => {
           console.log('save successfully');
+          this.router.navigateByUrl('/admin/product');
         }).catch((err) => {
           console.log(err);
         })
@@ -86,18 +92,18 @@ export class ManageProductComponent implements OnInit {
     }
   }
 
-  private getBase64(img: File, callback: (img: string) => void): void {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => callback(reader.result!.toString()));
-    reader.readAsDataURL(img);
-  }
+  // private getBase64(img: File, callback: (img: string) => void): void {
+  //   const reader = new FileReader();
+  //   reader.addEventListener('load', () => callback(reader.result!.toString()));
+  //   reader.readAsDataURL(img);
+  // }
 
-  handleChange(info: { file: NzUploadFile }): void {
-    console.log(info.file.status);
-    this.getBase64(info.file!.originFileObj!, (img: string) => {
-      console.log(img)
-    });
-  }
+  // handleChange(info: { file: NzUploadFile }): void {
+  //   console.log(info.file.status);
+  //   this.getBase64(info.file!.originFileObj!, (img: string) => {
+  //     console.log(img)
+  //   });
+  // }
 
   cancel(): void {
     this.router.navigateByUrl('/admin/product');
