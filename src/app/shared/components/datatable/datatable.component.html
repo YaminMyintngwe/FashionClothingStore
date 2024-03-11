@@ -42,3 +42,14 @@
  <ng-template #rangeTemplate let-range="range" let-total>
     Showing {{ range[0] }} to {{ range[1] }} of {{ total }} entries
   </ng-template>
+
+  <ng-template #tplTitle>
+    <h2>Comfirm Delete!</h2>
+</ng-template>
+<ng-template #tplContent>
+    <p>Are you sure you want to delete?</p>
+</ng-template>
+<ng-template #tplFooter>
+    <button nz-button (click)="deleteRow()" class="btn-danger">Ok</button>
+</ng-template>
+  

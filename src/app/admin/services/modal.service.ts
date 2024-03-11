@@ -10,11 +10,11 @@ export class ModalService {
     
     constructor(private modal: NzModalService) { }
 
-    createModal(info: any, tplContent: TemplateRef<{}>, tplTitle?: TemplateRef<{}>, tplFooter?: TemplateRef<{}>): void {
+    createModal(data: any, tplContent: TemplateRef<{}>, tplTitle?: TemplateRef<{}>, tplFooter?: TemplateRef<{}>): void {
         this.tplModal = this.modal.create({
-            nzTitle: tplTitle || undefined,
+            nzTitle: tplTitle,
             nzContent: tplContent,
-            nzFooter: tplFooter || null,
+            nzFooter: tplFooter,
         });
     }
 
