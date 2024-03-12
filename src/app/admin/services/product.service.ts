@@ -34,7 +34,7 @@ export class ProductService {
         return updateDoc(docInstance, updateData);        
     }
 
-    deleteProduct(id : string) {
+    deleteProduct(id : any) {
         const docInstance = doc(this.fireStore, 'products', id);
         return deleteDoc(docInstance);
     }

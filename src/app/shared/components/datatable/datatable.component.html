@@ -22,7 +22,7 @@
         <td>
           <div class="d-flex">
             <a class="edit" [routerLink]="['./'+data.id]"><i class="bi bi-pencil-square"></i></a>
-            <a class="delete" (click)="onDelete(data)"><i class="bi bi-trash"></i></a>
+            <a class="delete" (click)="onDelete(data.id)"><i class="bi bi-trash"></i></a>
           </div>
         </td>
       </tr>
@@ -42,14 +42,4 @@
  <ng-template #rangeTemplate let-range="range" let-total>
     Showing {{ range[0] }} to {{ range[1] }} of {{ total }} entries
   </ng-template>
-
-  <ng-template #tplTitle>
-    <h2>Comfirm Delete!</h2>
-</ng-template>
-<ng-template #tplContent>
-    <p>Are you sure you want to delete?</p>
-</ng-template>
-<ng-template #tplFooter>
-    <button nz-button (click)="deleteRow()" class="btn-danger">Ok</button>
-</ng-template>
   

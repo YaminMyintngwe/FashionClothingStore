@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, TemplateRef, ViewChild } from '
 import { TableColumn } from '../../models/table-column';
 import { KeyValue } from '@angular/common';
 import { ModalService } from 'src/app/admin/services/modal.service';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-datatable',
@@ -22,7 +23,7 @@ export class DatatableComponent  {
   tplFooter!: TemplateRef<{}>;
 
 
-  constructor(private modalService : ModalService) {}
+  constructor(private modalService : ModalService, private modal : NzModalService) {}
 
   keepOrder = (a: KeyValue<string,string>, b: KeyValue<string,string>): any => {
     return a;
@@ -33,11 +34,17 @@ export class DatatableComponent  {
   //   this.deleteEvent.emit(data);
   // }
 
-  onDelete(data : any) {
-    this.modalService.createModal(data, this.tplContent, this.tplTitle,this.tplFooter);
-  }
-
-  deleteRow() {
-    
+  onDelete(id : any) {
+    //this.modalService.createModal(data, this.tplContent, this.tplTitle,this.tplFooter);
+    this.modal.confirm({
+      nzTitle: 'Confirmation',
+      nzContent: 'Are you sure want to delete?',
+      nzOkText: 'Yes',
+      nzOkType: 'primary',
+      nzOkDanger: true,
+      nzOnOk: () => this.deleteEvent.emit(id),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
   }
 }

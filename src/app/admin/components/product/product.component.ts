@@ -28,8 +28,8 @@ export class ProductComponent implements OnInit{
       this.router.navigateByUrl(`/admin/product/${id}`);
     }
 
-    onDelete(product : Product) {
-      this.productService.deleteProduct(product.id).then(() => {
+    onDelete(id: any) {
+      this.productService.deleteProduct(id).then(() => {
         console.log('delete successful');
       })
     }
