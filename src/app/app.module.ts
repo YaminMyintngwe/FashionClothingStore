@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,9 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
         IndividualLayoutComponent,
         AdminLayoutComponent
     ],
-    providers: [],
+    providers: [
+        DatePipe
+    ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

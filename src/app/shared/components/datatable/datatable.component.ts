@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { TableColumn } from '../../models/table-column';
-import { KeyValue } from '@angular/common';
+import { DatePipe, KeyValue } from '@angular/common';
 import { ModalService } from 'src/app/admin/services/modal.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
@@ -9,21 +9,22 @@ import { NzModalService } from 'ng-zorro-antd/modal';
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.scss']
 })
-export class DatatableComponent  {
+export class DatatableComponent implements OnChanges {
   @Input() tableColumns : TableColumn[] = [];
   @Input() tableRows : any;
   @Output() deleteEvent = new EventEmitter<any>();
-  @ViewChild('tplContent')
-  tplContent!: TemplateRef<{}>;
-  
-  @ViewChild('tplTitle')
-  tplTitle!: TemplateRef<{}>;
-  
-  @ViewChild('tplFooter')
   tplFooter!: TemplateRef<{}>;
 
 
-  constructor(private modalService : ModalService, private modal : NzModalService) {}
+  constructor(private modalService : ModalService, private modal : NzModalService, private datePipe : DatePipe) {}
+
+  ngOnChanges(): void {
+    console.log(this.tableRows);
+    this.tableRows.map((row: any) => {
+      row.date = row?.date?.seconds;
+      return row;
+    })
+  }
 
   keepOrder = (a: KeyValue<string,string>, b: KeyValue<string,string>): any => {
     return a;
@@ -46,5 +47,10 @@ export class DatatableComponent  {
       nzCancelText: 'No',
       nzOnCancel: () => console.log('Cancel')
     });
+  }
+
+  getSecFromDate(date : any) : number {
+    console.log(date)
+    return date.seconds;
   }
 }

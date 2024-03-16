@@ -1,4 +1,4 @@
 <nz-card nzTitle="Blog List">
     <button nz-button nzType="default" class="mb-3" (click)="addBlog(0)">Add Blog <i class="bi bi-plus-lg"></i></button>
-    <app-datatable [tableColumns]="blogTableColumns"></app-datatable>
+    <app-datatable [tableColumns]="blogTableColumns" [tableRows]="blogs" ></app-datatable>
 </nz-card>

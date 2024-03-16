@@ -13,6 +13,7 @@ import { ManageBlogComponent } from './components/manage-blog/manage-blog.compon
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
 import { RoleComponent } from './components/role/role.component';
 import { ManageRoleComponent } from './components/manage-role/manage-role.component';
+import { DateFormatter } from '../shared/pipes/date-formatter.pipe';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,6 @@ import { ManageRoleComponent } from './components/manage-role/manage-role.compon
     imports: [
         SharedModule,
         AdminRoutingModule
-    ]
+    ],
 })
 export class AdminModule { }

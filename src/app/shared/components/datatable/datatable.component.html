@@ -18,6 +18,10 @@
             <ng-container *ngIf="item.key !== 'id' && item.key !== 'imagePath'">
               {{item.value}}
             </ng-container>
+            <ng-container *ngIf="item.key === 'date'">
+              {{item.value | dateFormatter : 'dd MMM yyyy'}}
+            </ng-container>
+
           </td>
         <td>
           <div class="d-flex">
